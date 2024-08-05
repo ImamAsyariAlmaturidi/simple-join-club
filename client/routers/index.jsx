@@ -4,7 +4,7 @@ import Login from "../views/Login";
 import Home from "../views/Home";
 import BaseLayout from "../components/BaseLayout";
 import MyClubs from '../views/MyClubs'
-import UpdateForm from "../components/UpdateForm";
+import UpdatePage from "../views/UpdatePage";
 const router = createBrowserRouter([
   {
     path: "/login",
@@ -39,7 +39,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/update-club/:clubId/:myClubId',
-        element: <UpdateForm />,
+        element: <UpdatePage />,
         loader: () => {
             if (!localStorage.access_token) {
               return redirect("/login");

@@ -21,6 +21,9 @@ const UpdateForm = () => {
           },
         }
       );
+      setImageUrl(data.imageUrl)
+      setTitle(data.title)
+      setDescription(data.description)
       setDataById(data);
     } catch (error) {
       console.log(error);
@@ -73,15 +76,15 @@ const UpdateForm = () => {
       <form className="flex flex-col justify-around h-screen">
         <div>
           <label className="mx-16">Image Url</label>
-          <input type="text" onChange={(e) => setImageUrl(e.target.value)} />
+          <input type="text" className="text-white" onChange={(e) => setImageUrl(e.target.value)} value={imageUrl} />
         </div>
         <div>
           <label className="mx-16">Title</label>
-          <input type="text" onChange={(e) => setTitle(e.target.value)} />
+          <input type="text" className="text-white" onChange={(e) => setTitle(e.target.value)} value={title}/>
         </div>
         <div>
           <label className="mx-16">Description</label>
-          <input type="text" onChange={(e) => setDescription(e.target.value)} />
+          <input type="text" className="text-white" onChange={(e) => setDescription(e.target.value)} value={description}/>
         </div>
         <button onClick={(e) => update(e)} className="btn btn-success btn-md">
           Update
